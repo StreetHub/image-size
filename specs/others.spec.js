@@ -46,6 +46,14 @@ describe('Invalid invocation', function () {
         expect(e.message).to.contain('doesn\'t support buffer');
       });
     });
+
+    it('should pass error in callback', function (){
+      imageSize(buffer, function(e){
+        expect(e).to.be.a(TypeError);
+        expect(e.message).to.contain('doesn\'t support buffer');
+      });
+    });
+
   });
 
 });
